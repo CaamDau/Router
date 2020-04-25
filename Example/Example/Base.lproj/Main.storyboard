@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wX0-qb-ieY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CaamDau-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CaamDau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nP0-bW-DGd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-ha-iyF">
+                                <rect key="frame" x="151.5" y="410.5" width="111" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9V-CX-jmF">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Router.Order.list"/>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VIW-Ah-Zkt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGp-k6-r4e">
+                                        <rect key="frame" x="0.0" y="50" width="111" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="调OC类"/>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3E-8e-w49"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nP0-bW-DGd" secondAttribute="trailing" id="Kbk-bP-njb"/>
+                            <constraint firstItem="nP0-bW-DGd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XBB-cW-iZS"/>
+                            <constraint firstItem="g2I-ha-iyF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dT8-E0-JqJ"/>
+                            <constraint firstItem="nP0-bW-DGd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fj9-6j-aof"/>
+                            <constraint firstItem="g2I-ha-iyF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kJT-8O-rTX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nP0-bW-DGd" secondAttribute="bottom" id="pUr-CU-IaA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CaamDau" id="NPs-Es-54r"/>
+                    <connections>
+                        <outlet property="tableView" destination="nP0-bW-DGd" id="fDQ-hk-ZG2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="11"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="UJe-go-hJi">
+            <objects>
+                <navigationController id="vyZ-XP-Jy2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="LYv-eh-ANf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dtq-Aa-mGK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ewC-wz-YQM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vf8-E2-7Di" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="12"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="E5E-ZA-ar0">
+            <objects>
+                <navigationController id="1HU-gR-Qzi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uTs-xa-2M9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jzx-pa-WcT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c4Z-Mv-LSo" kind="relationship" relationship="rootViewController" id="R5g-ja-36R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4om-mr-EFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="741"/>
+        </scene>
+        <!--OC 类调Router-->
+        <scene sceneID="ZAp-5F-gdu">
+            <objects>
+                <viewController storyboardIdentifier="VC_ObjC" id="c4Z-Mv-LSo" customClass="VC_ObjC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5XZ-Po-hrE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OJa-vd-5Rm">
+                                <rect key="frame" x="109.5" y="385.5" width="195" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95g-qa-qh2">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="caamdau://order/submit"/>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="c4Z-Mv-LSo" eventType="touchUpInside" id="fo6-fW-RaW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-ZD-PYd">
+                                        <rect key="frame" x="0.0" y="50" width="195" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="caamdau://Order/VC_Submit"/>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="c4Z-Mv-LSo" eventType="touchUpInside" id="2NR-dW-d7o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEv-FD-WLD">
+                                        <rect key="frame" x="0.0" y="100" width="195" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="caamdau://VC_Web"/>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="c4Z-Mv-LSo" eventType="touchUpInside" id="ztR-BS-Pxv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OJa-vd-5Rm" firstAttribute="centerX" secondItem="fjU-WE-Sfm" secondAttribute="centerX" id="6a6-78-nQw"/>
+                            <constraint firstItem="OJa-vd-5Rm" firstAttribute="centerY" secondItem="fjU-WE-Sfm" secondAttribute="centerY" id="FGa-D1-HL2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fjU-WE-Sfm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="3ho-cF-gcQ"/>
+                    <navigationItem key="navigationItem" title="OC 类调Router" id="y6j-VL-5Ee"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJZ-1Z-Cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="741"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gYV-ql-ujt">
+            <objects>
+                <tabBarController id="wX0-qb-ieY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v4q-49-aH4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vyZ-XP-Jy2" kind="relationship" relationship="viewControllers" id="Nyv-zB-oG8"/>
+                        <segue destination="1HU-gR-Qzi" kind="relationship" relationship="viewControllers" id="ouX-vb-RaV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I96-6C-YGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-893" y="166"/>
+        </scene>
+    </scenes>
+</document>

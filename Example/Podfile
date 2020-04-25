@@ -1,0 +1,15 @@
+use_frameworks!
+inhibit_all_warnings!
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+target 'Example' do
+  pod 'CaamDauCompatible', :git => 'https://github.com/CaamDau/Compatible.git'
+  pod 'CaamDauValue', :git => 'https://github.com/CaamDau/Value.git'
+  pod 'CaamDauExtension', :git => 'https://github.com/CaamDau/Extension.git'
+  pod 'CaamDauRouter', :path => '../'
+  
+  pod 'Router', :path => './Module/Router'
+  pod 'Order', :path => './Module/Order'
+  pod 'Sign', :path => './Module/Sign'
+  
+end
