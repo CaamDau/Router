@@ -21,9 +21,7 @@ class ViewController: UIViewController {
     @IBAction func buttonClick(_ sender: UIButton) {
         switch sender.tag {
         case 10:
-            Router.Order.list.router(["idx":1]) { (res) in
-                
-            }
+            Router.Order.list.router(["idx":1]) { (res) in }
         case 11:
             Router.Utility.oc.router()
         default:

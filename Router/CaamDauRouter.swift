@@ -2,12 +2,9 @@
 
 /***** 模块文档 *****
  * 提供一个路由协议
- * 自定义一个路由管理器，遵循此协议
 */
 
-
 import Foundation
-
 
 public typealias CD_RouterParameter = [AnyHashable:Any]
 public typealias CD_RouterCallback = ((CD_RouterParameter?)->Void)?
@@ -49,7 +46,6 @@ extension CD_RouterProtocol {
     public static let shared = CD_Router()
     public var routerHandler:((_ router:CD_RouterProtocol, _ parameter:CD_RouterParameter, _ callback:CD_RouterCallback)->Void)?
 }
-
 extension CD_Router {
     /// 直接通过 URL 配合 application open url 进行寻址
     @objc public class func open(url string:String, param:CD_RouterParameter = [:]) {
@@ -69,7 +65,6 @@ extension CD_Router {
             return
         }
         
-        
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
@@ -78,12 +73,10 @@ extension CD_Router {
     }
 }
 
-
 /// 对外接口路由协议 用于直接页面开放接口路由： ViewController.router([:], callback:{_ in })
 @objc public protocol CD_RouterInterface {
     static func router(_ param:CD_RouterParameter, callback:CD_RouterCallback)
 }
-
 
 extension CD_Router {
     public static func target(_ string:String) -> CD_RouterInterface.Type? {

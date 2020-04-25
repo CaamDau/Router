@@ -14,7 +14,6 @@ import CaamDauRouter
 public struct Router {
     /// 同一页面 不同模式、状态、类型，进行区分
     public static let PathKey = "router_path"
-    
     static var appName:String {
         return Bundle.main.infoDictionary!["CFBundleExecutable"] as? String ?? ""
     }
@@ -46,7 +45,6 @@ extension Router {
         public var parameter: CD_RouterParameter {
             return [Router.PathKey:self.rawValue]
         }
-        
         public var target: String? {
             switch self {
             case .list:

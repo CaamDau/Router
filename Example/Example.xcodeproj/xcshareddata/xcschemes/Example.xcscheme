@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "47FC34DB2238076F0022174D"
-               BuildableName = "CaamDau.app"
+               BuildableName = "&#x8695;&#x8c46;.app"
                BlueprintName = "Example"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "47FC34DB2238076F0022174D"
-            BuildableName = "CaamDau.app"
+            BuildableName = "&#x8695;&#x8c46;.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "47FC34DB2238076F0022174D"
-            BuildableName = "CaamDau.app"
+            BuildableName = "&#x8695;&#x8c46;.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
