@@ -1,6 +1,14 @@
 # Router
 路由组件，极致简约而强大的组件化路由
 
+```
+pod 'CaamDauRouter'
+或
+pod 'CaamDauRouter', :git => 'https://github.com/CaamDau/Router.git'
+或
+pod 'CaamDau/Router'
+```
+
 ### 1、配置路由表
 - 模块A的开发者自行配置所开发模块A的路由表，遵循 CD_RouterProtocol 协议
 - 模块A中需要开放调用的页面，类 遵循 CD_RouterInterface 协议 (类 不需要 public，也就是模块中的所有内容都可私有)
@@ -34,7 +42,7 @@ extension Router {
 extension VC_Submit: CD_RouterInterface {
     static func router(_ param: CD_RouterParameter = [:], callback: CD_RouterCallback = nil) {
         let vc = VC_Submit.cd_storyboard("OrderStoryboard", from: "Order")!
-        print_cd("VC_Submit.param：", param)
+        vc.vm.id = param.stringValue("id")
         CD.push(vc)
     }
 }
@@ -49,7 +57,7 @@ Router.Order.list.router(["idx":1]) { (res) in }
 - 以上已经完成了闭环
 - 当然 如果在 路由表 中没有配置 target，
 - 那么 需要在 application didFinishLaunchingWithOptions 实现 CD_Router.shared.routerHandler
-- 这个时候 建议 将需要开放的页面 另外使用一个 public 类 R_OrderSubmit 遵循 CD_RouterInterface 提供入口
+- 这个时候 建议 将需要开放的页面 另外使用一个 public (struct/class) R_OrderSubmit 遵循 CD_RouterInterface 提供入口
 - 不建议将 ViewController public
 ```
 CD_Router.shared.routerHandler = { [weak self](r, param, callback) in
@@ -73,7 +81,7 @@ func map(_ router:CD_RouterProtocol,
 **以上就是完整的步骤**
 ---
 
----
+
 **下面的是其他场景中的步骤、两个场景互不干扰**
 ### 其他场景：OC 或者其他App调起  可通过 open url 
 ```
