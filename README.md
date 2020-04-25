@@ -64,13 +64,13 @@ CD_Router.shared.routerHandler = { [weak self](r, param, callback) in
     self?.order(r, param, callback)
 }
 
-func map(_ router:CD_RouterProtocol,
+func order(_ router:CD_RouterProtocol,
     _ param:CD_RouterParameter = [:],
     _ callback:CD_RouterCallback = nil) {
         
     switch router {
     case Router.Order.submit:
-            R_OrderSubmit.router(param, callback:callback)
+        R_OrderSubmit.router(param, callback:callback)
     default: break
     }
         
