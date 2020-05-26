@@ -74,7 +74,7 @@ extension CD_Router {
 }
 
 /// 对外接口路由协议 用于直接页面开放接口路由： ViewController.router([:], callback:{_ in })
-@objc public protocol CD_RouterInterface {
+public protocol CD_RouterInterface {
     static func router(_ param:CD_RouterParameter, callback:CD_RouterCallback)
 }
 
