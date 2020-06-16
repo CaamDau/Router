@@ -6,51 +6,51 @@
 
 import Foundation
 
-public typealias CD_RouterParameter = [AnyHashable:Any]
-public typealias CD_RouterCallback = ((CD_RouterParameter?)->Void)?
+public typealias RouterParameter = [AnyHashable:Any]
+public typealias RouterCallback = ((RouterParameter?)->Void)?
 
 /// 输入协议：路由表协议
-public protocol CD_RouterProtocol {
+public protocol RouterProtocol {
     /// 目标 如："Home.R_Home" (Home: 模块、组件 命名空间，R_Home：接口类)
     var target:String? {get}
     /// 增补固定参数
-    var parameter:CD_RouterParameter {get}
+    var parameter:RouterParameter {get}
     /// 入参、回参 模糊，自由度更好
-    func router(_ param:CD_RouterParameter, callback:CD_RouterCallback)
+    func router(_ param:RouterParameter, callback:RouterCallback)
 }
-extension CD_RouterProtocol {
+extension RouterProtocol {
     /// 目标 如："Home.R_Home" (Home: 模块、组件 命名空间，R_Home：接口类)
     public var target:String? { return nil }
-    public var parameter:CD_RouterParameter { return [:] }
+    public var parameter:RouterParameter { return [:] }
     
     /// 入参、回参 模糊，自由度更好
-    public func router(_ param:CD_RouterParameter = [:], callback:CD_RouterCallback = nil) {
+    public func router(_ param:RouterParameter = [:], callback:RouterCallback = nil) {
         self.routerCore(param, callback: callback)
     }
     
-    public func routerCore(_ param:CD_RouterParameter, callback:CD_RouterCallback) {
-        if  let target = target, let r = CD_Router.target(target) {
+    public func routerCore(_ param:RouterParameter, callback:RouterCallback) {
+        if  let target = target, let r = Router.target(target) {
             var param = param
-            parameter.forEach{param[$0.key] = $0.value}
+            parameter.forEach{ param[$0.key] = $0.value }
             r.router(param, callback: callback)
         }else{
             var param = param
-            parameter.forEach{param[$0.key] = $0.value}
-            CD_Router.shared.routerHandler?(self, param, callback)
+            parameter.forEach{ param[$0.key] = $0.value }
+            Router.shared.routerHandler?(self, param, callback)
         }
     }
 }
 
-@objc public class CD_Router: NSObject {
+@objc public class Router: NSObject {
     private override init(){}
-    public static let shared = CD_Router()
-    public var routerHandler:((_ router:CD_RouterProtocol, _ parameter:CD_RouterParameter, _ callback:CD_RouterCallback)->Void)?
+    public static let shared = Router()
+    public var routerHandler:((_ router:RouterProtocol, _ parameter:RouterParameter, _ callback:RouterCallback)->Void)?
 }
-extension CD_Router {
+extension Router {
     /// 直接通过 URL 配合 application open url 进行寻址
-    @objc public class func open(url string:String, param:CD_RouterParameter = [:]) {
+    @objc public class func open(url string:String, param:RouterParameter = [:]) {
         guard let urlComponents = NSURLComponents(string: string) else {
-            debugPrint("CD_Router withURL string error:", string)
+            debugPrint("Router withURL string error:", string)
             return
         }
         var items:[URLQueryItem] = []
@@ -60,8 +60,8 @@ extension CD_Router {
         }
         urlComponents.queryItems = items
         
-        guard var url = urlComponents.url else {
-            debugPrint("CD_Router withURL error:", urlComponents)
+        guard let url = urlComponents.url else {
+            debugPrint("Router withURL error:", urlComponents)
             return
         }
         
@@ -74,12 +74,12 @@ extension CD_Router {
 }
 
 /// 对外接口路由协议 用于直接页面开放接口路由： ViewController.router([:], callback:{_ in })
-public protocol CD_RouterInterface {
-    static func router(_ param:CD_RouterParameter, callback:CD_RouterCallback)
+public protocol RouterInterface {
+    static func router(_ param:RouterParameter, callback:RouterCallback)
 }
 
-extension CD_Router {
-    public static func target(_ string:String) -> CD_RouterInterface.Type? {
-        return NSClassFromString(string) as? CD_RouterInterface.Type
+extension Router {
+    public static func target(_ string:String) -> RouterInterface.Type? {
+        return NSClassFromString(string) as? RouterInterface.Type
     }
 }
